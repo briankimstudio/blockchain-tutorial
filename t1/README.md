@@ -149,9 +149,11 @@ var greeter = greeterContract.new(_greeting, {from: eth.accounts[0], data: "0x" 
   }
 })
 ```
-In this step, smart contract has ben submitted to the network successfully, then it has been mined after several seconds.
+In this step, smart contract has ben submitted to the network successfully, then it will be mined after several seconds. Once it is mined, you will see `Contract mined!` on console.
 
 ## Check Address of Smart Contract
+
+This step is for informational purpose only.
 
 ```
 > eth.getCode(greeter.address)
@@ -159,6 +161,8 @@ In this step, smart contract has ben submitted to the network successfully, then
 ```
 
 ## Execute Smart Contract
+
+Once smart contract is mined, you can call it just like calling regular function and it will show the output.
 
 ```
 > greeter.greet()
