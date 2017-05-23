@@ -84,6 +84,7 @@ true
 
 ## Submit compiled SC
 
+```
 loadScript("HelloNCHU.js");
 var _greeting = "Hello NCHU!";
 var greeterContract = web3.eth.contract(JSON.parse(greeterCompiled.contracts["HelloNCHU.sol:greeter"].abi));
@@ -98,7 +99,7 @@ var greeter = greeterContract.new(_greeting, {from: eth.accounts[0], data: "0x" 
    }
   }
 })
-
+```
 In this step, smart contract has ben submitted to the network successfully, then it has been mined after several seconds.
 
 ## Check Address of SC
