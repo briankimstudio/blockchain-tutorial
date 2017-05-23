@@ -59,7 +59,39 @@ INFO [05-23|13:33:35] Successfully wrote genesis state         database=lightcha
 ```
 
 
-## Compile SC
+## Source code of Smart Contract
+
+```
+pragma solidity ^0.4.8;
+
+contract mortal {
+    /* Define variable owner of the type address*/
+    address owner;
+
+    /* this function is executed at initialization and sets the owner of the contract */
+    function mortal() { owner = msg.sender; }
+
+    /* Function to recover the funds on the contract */
+    function kill() { if (msg.sender == owner) selfdestruct(owner); }
+}
+
+contract greeter is mortal {
+    /* define variable greeting of the type string */
+    string greeting;
+
+    /* this runs when the contract is executed */
+    function greeter(string _greeting) public {
+        greeting = _greeting;
+    }
+
+    /* main function */
+    function greet() constant returns (string) {
+        return greeting;
+    }
+}
+```
+
+## Compile Smart Contract
 
 *WARNING! The current version of geth use different method to compile smart contract compared to previous version of geth and the smart contract tutorial on official Ethereum website does not work. Because it has not been updated according to new method. This is the right way for current version of geth.*
 
@@ -85,7 +117,7 @@ at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
 >
 ```
 
-## Unlock Account to submit SC 
+## Unlock Account to submit Smart Contract 
 
 Copy and paste 3 lines in the following code into `geth console`, then it will ask Phassphrase to unlock the account to pay  ether for submitting smart contract to blockchain network.
 
@@ -99,7 +131,7 @@ Passphrase:
 true
 ```
 
-## Submit compiled SC
+## Submit compiled Smart Contract
 
 ```
 loadScript("HelloNCHU.js");
@@ -119,14 +151,14 @@ var greeter = greeterContract.new(_greeting, {from: eth.accounts[0], data: "0x" 
 ```
 In this step, smart contract has ben submitted to the network successfully, then it has been mined after several seconds.
 
-## Check Address of SC
+## Check Address of Smart Contract
 
 ```
 > eth.getCode(greeter.address)
 "0x606060405263ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166341c0e1b58114610045578063cfae321714610057575bfe5b341561004d57fe5b6100556100e7565b005b341561005f57fe5b610067610129565b6040805160208082528351818301528351919283929083019185019080838382156100ad575b8051825260208311156100ad57601f19909201916020918201910161008d565b505050905090810190601f1680156100d95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000543373ffffffffffffffffffffffffffffffffffffffff908116911614156101265760005473ffffffffffffffffffffffffffffffffffffffff16ff5b5b565b6101316101c1565b60018054604080516020600284861615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101b65780601f1061018b576101008083540402835291602001916101b6565b820191906000526020600020905b81548152906001019060200180831161019957829003601f168201915b505050505090505b90565b604080516020810190915260008152905600a165627a7a723058200d18cdd7e67ed1701ac687be35dda0246ab2ee165e5323ad3f963ad6d7c7f6cf0029"
 ```
 
-## Execute SC
+## Execute Smart Contract
 
 ```
 > greeter.greet()
