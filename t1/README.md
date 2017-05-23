@@ -1,11 +1,13 @@
 # Installation on Macos
 
+```
 brew update
 brew upgrade
 brew tap ethereum/ethereum
 brew install ethereum
 
 npm install -g solc
+```
 
 # Overview
 
@@ -25,12 +27,14 @@ Execute SC
 
 ## Create Blockchain Account for Private Network
 
+```
 $ geth account new --datadir .ethereum-private
 
 Your new account is locked with a password. Please give a password. Do not forget this password.
 Passphrase: 
 Repeat passphrase: 
 Address: {9ba0798fc2e5502d8353028c213b49a3e1e1f6a9}
+```
 
 ## Create Private Blockchain Network
 
@@ -38,6 +42,7 @@ In this step, it creates necessary data structure for maintaining blockchain for
 
 Substitute ACCOUNT in genesis.json to newly created account number
 
+```
 $ geth --datadir .ethereum-private init genesis.json 
 
 INFO [05-23|13:33:35] Allocated cache and file handles         database=/Users/demo/Project/bc/test/.ethereum-private/geth/chaindata cache=16 handles=16
@@ -46,20 +51,23 @@ INFO [05-23|13:33:35] Successfully wrote genesis state         database=chaindat
 INFO [05-23|13:33:35] Allocated cache and file handles         database=/Users/demo/Project/bc/test/.ethereum-private/geth/lightchaindata cache=16 handles=16
 INFO [05-23|13:33:35] Writing custom genesis block 
 INFO [05-23|13:33:35] Successfully wrote genesis state         database=lightchaindata                                                     hash=ed6c51…624943
-
+```
 
 Genesis Block for Private Network
 
 ## Compile SC
 
-WARNING! The current version of geth use different method to compile smart contract compared to previous version of geth and the smart contract tutorial on official Ethereum website does not work. Because it has not been updated according to new method. This is the right way for current version of geth.
+*WARNING! The current version of geth use different method to compile smart contract compared to previous version of geth and the smart contract tutorial on official Ethereum website does not work. Because it has not been updated according to new method. This is the right way for current version of geth.*
 
+```
 $ echo "var greeterCompiled=`solc --optimize --combined-json abi,bin,interface HelloNCHU.sol`" > HelloNCHU.js
+```
 
 ## Launch Ethereum Node Process
 
 In this step, it actually launches Linux process working as a node for private Ethereum network.
 
+```
 $ geth --mine --minerthreads=1 --datadir .ethereum-private --networkid 123456789 --nodiscover --maxpeers 0 console 2>> .ethereum-private.log
 
 Welcome to the Geth JavaScript console!
@@ -71,6 +79,7 @@ at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
  modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
 
 >
+```
 
 ## Unlock Account to submit SC 
 
