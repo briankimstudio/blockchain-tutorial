@@ -15,8 +15,8 @@ The purpose of this tutorial is to provide hands-on experience on building priva
  
 * Create Blockchain Account for Private Network
 * Create Private Blockchain Network
- + Genesis Block  
- + Pre-allocate Ether to Account
+  + Genesis Block  
+  + Pre-allocate Ether to Account
 * Compile SC(Smart Contract)
 * Launch Ethereum Node Process
 * Submit SC
