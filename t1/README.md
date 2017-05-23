@@ -1,14 +1,3 @@
-# Installation on Macos
-
-```
-brew update
-brew upgrade
-brew tap ethereum/ethereum
-brew install ethereum
-
-npm install -g solc
-```
-
 # Overview
 
 The purpose of this tutorial is to provide hands-on experience on building private Ethereum network and test smart contract on Linux environment. 
