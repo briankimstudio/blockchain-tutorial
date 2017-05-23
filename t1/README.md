@@ -52,12 +52,11 @@ Address: {9ba0798fc2e5502d8353028c213b49a3e1e1f6a9}
     }
 }
 ```
+Substitute ACCOUNT in `genesis.json` to newly created account number
 
 ## Create Private Blockchain Network
 
 In this step, it creates necessary data structure for maintaining blockchain for private network based on the content of genesis block.
-
-Substitute ACCOUNT in `genesis.json` to newly created account number
 
 ```
 $ geth --datadir .ethereum-private init genesis.json 
