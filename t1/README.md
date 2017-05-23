@@ -13,14 +13,14 @@ npm install -g solc
 
 The purpose of this tutorial is to provide hands-on experience on building private Ethereum network and test smart contract on Linux environment. 
  
-Create Blockchain Account for Private Network
-Create Private Blockchain Network
-Genesis Block
-Pre-allocate Ether to Account
-Compile SC(Smart Contract)
-Launch Ethereum Node Process
-Submit SC
-Execute SC
+* Create Blockchain Account for Private Network
+* Create Private Blockchain Network
+..* Genesis Block
+..* Pre-allocate Ether to Account
+* Compile SC(Smart Contract)
+* Launch Ethereum Node Process
+* Submit SC
+* Execute SC
 
 
 # Steps
