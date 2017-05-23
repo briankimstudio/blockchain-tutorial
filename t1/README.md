@@ -35,12 +35,29 @@ Passphrase:
 Repeat passphrase: 
 Address: {9ba0798fc2e5502d8353028c213b49a3e1e1f6a9}
 ```
+## Genesis Block for Private Network
+
+```
+{
+    "config": {
+        "chainId": 15,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    },
+    "difficulty": "0x1",
+    "gasLimit": "2100000",
+    "alloc": {
+        "ACCOUNT": { "balance": "40000000000000000" }
+    }
+}
+```
 
 ## Create Private Blockchain Network
 
 In this step, it creates necessary data structure for maintaining blockchain for private network based on the content of genesis block.
 
-Substitute ACCOUNT in genesis.json to newly created account number
+Substitute ACCOUNT in `genesis.json` to newly created account number
 
 ```
 $ geth --datadir .ethereum-private init genesis.json 
@@ -53,7 +70,6 @@ INFO [05-23|13:33:35] Writing custom genesis block
 INFO [05-23|13:33:35] Successfully wrote genesis state         database=lightchaindata                                                     hash=ed6c51…624943
 ```
 
-Genesis Block for Private Network
 
 ## Compile SC
 
