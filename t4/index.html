@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <style> .table > tbody > tr > td {
+    vertical-align: middle;
+  } 
+  </style>
+</head> 
+<body class="container">
+  <h1>Blockchain based Member Management System</h1>
+
+  <div>Select Solidity File : <input type='file' accept='.sol' onchange='openFile(event)' /></div>
+  <div>
+  Contract Address : <span id="address"></span>
+  </div>
+  
+  <!--
+  <button onclick="reset()" class="btn btn-primary">Reset</button>
+  -->
+  <span>Total : </span><span id="total"></span>
+  <div id="output"></div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-xs-3">Student ID</th>
+          <th class="col-xs-3">Name</th>
+          <th class="col-xs-3">Password</th>
+          <th class="col-xs-3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <input type="text" id="id" placeholder="Student ID" />
+  <input type="text" id="name" placeholder="Name" />
+  <input type="text" id="password" placeholder="Password" />
+  <a href="#" onclick="createMember()" class="btn btn-primary">Create</a>
+</body>
+<script src="./bower_components/web3/dist/web3.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</html>
