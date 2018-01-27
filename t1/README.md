@@ -1,7 +1,8 @@
 # Overview
 
-The purpose of this tutorial is to provide hands-on experience on building private Ethereum network and test smart contract on Linux environment. 
- 
+The purpose of this tutorial is to provide hands-on experience on building private Ethereum network and test smart contract on Linux & Windows 10 environment. 
+
+* Required tools
 * Create Blockchain Account for Private Network
 * Create Private Blockchain Network
   + Genesis Block  
@@ -11,6 +12,11 @@ The purpose of this tutorial is to provide hands-on experience on building priva
 * Submit SC
 * Execute SC
 
+# Required tools
+
+* geth
+* solc
+* bash on Windows
 
 # Steps
 
