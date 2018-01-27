@@ -128,7 +128,7 @@ at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
 Copy and paste 3 lines in the following code into `geth console`, then it will ask Phassphrase to unlock the account to pay  ether for submitting smart contract to blockchain network.
 
 ```
-web3.fromWei(eth.accounts[0],"ether")
+web3.fromWei(eth.getBalance(eth.accounts[0]),"ether")
 primary = eth.accounts[0]
 personal.unlockAccount(primary)
 
