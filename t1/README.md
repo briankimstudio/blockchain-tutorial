@@ -16,7 +16,7 @@ The purpose of this tutorial is to provide hands-on experience on building priva
 
 * geth
 * solc
-* bash on Windows
+* bash on Windows. Used for compiling command line only
 
 # Steps
 
